@@ -1,0 +1,98 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5em;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #1e90ff;
+}
+
+section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Collapsible section styling */
+.collapsible {
+    background-color: #f1f1f1;
+    margin: 10px 0;
+}
+
+.collapsible-header {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    text-align: left;
+    font-size: 1.2em;
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.collapsible-header:hover {
+    background-color: #1e90ff;
+}
+
+.collapsible-content {
+    display: none;
+    background-color: white;
+    padding: 15px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
+}
+
+a {
+    color: #1e90ff;
+    text-decoration: none;
+}
