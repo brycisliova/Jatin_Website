@@ -7,7 +7,7 @@
     <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Link to JS -->
     <script src="script.js" defer></script>
 </head>
@@ -23,6 +23,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#skills">Skills</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
@@ -30,117 +31,131 @@
         </div>
     </header>
 
-    <!-- Hero Section with Parallax Scrolling Effect -->
+    <!-- Hero Section with Parallax Scrolling Effect and Call to Action -->
     <section id="hero">
         <div class="parallax">
             <div class="hero-content animate-slide-up">
                 <h2>Welcome to My Portfolio</h2>
-                <p>Exploring the world of electrical engineering, semiconductor devices, and machine learning.</p>
+                <p>Innovating at the intersection of electrical engineering, semiconductor devices, and AI/ML.</p>
                 <!-- Call to Action Button -->
-                <a href="#projects" class="btn animate-fade-in">View My Work</a>
+                <a href="#projects" class="btn animate-fade-in">Explore My Work</a>
             </div>
         </div>
     </section>
 
-    <!-- About Section with Subsections for Education and Skills -->
+    <!-- About Section with Image and Details -->
     <section id="about" class="section">
         <div class="container">
             <h2 class="section-title animate-fade-in">About Me</h2>
             <p>I am currently pursuing a Dual Degree (B.Tech + M.Tech) in Electrical Engineering from IIT Bombay...</p>
+            <p>With a focus on semiconductor devices, signal processing, and machine learning, I have engaged in various innovative projects...</p>
             
-            <!-- Education Subsection -->
-            <div class="subsection" id="education">
-                <h3 class="animate-slide-left">Education</h3>
+            <!-- Profile Image Placeholder (to give a personal touch) -->
+            <img src="img/profile1.jpg" alt="Profile Picture" class="profile-img animate-slide-up">
+            <!-- Replace "img/profile1.jpg" with your actual profile picture -->
+
+            <!-- Subsection for Education -->
+            <div class="subsection animate-fade-in" id="education">
+                <h3>Education</h3>
                 <p>B.Tech + M.Tech, Electrical Engineering, IIT Bombay (2027 expected)</p>
             </div>
 
-            <!-- Skills Subsection -->
-            <div class="subsection" id="skills">
-                <h3 class="animate-slide-left">Skills</h3>
-                <ul class="skills-list">
-                    <li>Programming: C, C++, Python, Embedded C, Assembly</li>
-                    <li>Software: LTSpice, Fusion360, Keil, Figma</li>
-                    <li>Libraries: TensorFlow, Keras, Numpy, Pandas</li>
+            <!-- Subsection for Professional Experience -->
+            <div class="subsection animate-fade-in" id="experience">
+                <h3>Professional Experience</h3>
+                <ul class="experience-list">
+                    <li>Vibration Noise Analysis for High Pressure Compressors, IIT Bombay</li>
+                    <li>Patent Analysis Internship, Industrial Research and Consultancy Centre, IIT Bombay</li>
                 </ul>
             </div>
-
-            <!-- Profile Image Placeholder -->
-            <img src="img/profile.jpg" alt="Profile Picture" class="profile-img animate-fade-in">
-            <!-- <Place your image in the img folder and update the src value to reflect the file path> -->
         </div>
     </section>
 
-    <!-- Projects Section with Collapsible Subsections -->
+    <!-- Projects Section with Cards and Hover Effects -->
     <section id="projects" class="section">
         <div class="container">
             <h2 class="section-title animate-fade-in">Projects</h2>
 
-            <!-- Project 1 -->
-            <div class="project">
-                <h3 class="project-title animate-slide-left">Low Cost Solar Photometer</h3>
-                <div class="project-content animate-fade-in">
-                    <p>Developed a reliable LED-based haze sensor circuit with an LM741 OpAmp and custom PCB design.</p>
-                    <!-- Add project image -->
-                    <img src="img/solar-photometer.jpg" alt="Solar Photometer" class="project-img">
-                    <!-- Add link to project files or GitHub -->
-                    <a href="link-to-project-files" class="btn project-link">View Project</a>
+            <div class="projects-grid">
+                <!-- Project Card 1 -->
+                <div class="project-card animate-slide-left">
+                    <img src="img/solar-photometer.jpg" alt="Solar Photometer Project" class="project-img">
+                    <h3>Low-Cost Solar Photometer</h3>
+                    <p>Developed an LED-based haze sensor circuit using LM741 OpAmp and custom PCB design for atmospheric measurements.</p>
+                    <!-- Add project link here -->
+                    <a href="https://drive.google.com/drive/folders/1TNQV681vmvC2Vv238fGNo0nrIiz22m6b?usp=sharing" class="btn project-link">View Project</a>
                 </div>
-            </div>
 
-            <!-- Collapsible Subsection for More Projects -->
-            <button class="collapsible">More Projects</button>
-            <div class="collapsible-content">
-                <!-- Project 2 -->
-                <div class="project">
-                    <h3 class="project-title">RISC Processor Design</h3>
-                    <div class="project-content">
-                        <p>Designed a 16-bit multicycle datapath using VHDL for the IITB-RISC instruction set...</p>
-                        <!-- Add project image -->
-                        <img src="img/risc-processor.jpg" alt="RISC Processor Design" class="project-img">
-                        <!-- Add link to project files or GitHub -->
-                        <a href="link-to-project-files" class="btn project-link">View Project</a>
-                    </div>
+                <!-- Project Card 2 -->
+                <div class="project-card animate-slide-right">
+                    <img src="img/risc-processor.jpg" alt="RISC Processor Design" class="project-img">
+                    <h3>RISC Processor Design</h3>
+                    <p>Designed a 16-bit multicycle datapath using VHDL for the IITB-RISC instruction set with optimized RTL simulations.</p>
+                    <!-- Add project link here -->
+                    <a href="https://github.com/brycisliova/RISC-Processor-Design" class="btn project-link">View Project</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Research Section with Animated Cards -->
+    <!-- Research Section with Collapsible Sections for Depth -->
     <section id="research" class="section">
         <div class="container">
             <h2 class="section-title animate-fade-in">Research</h2>
 
-            <!-- Research Project Cards -->
-            <div class="research-cards">
-                <!-- Research 1 -->
-                <div class="research-card animate-slide-up">
-                    <h3 class="research-title">Vibration Noise Analysis for High Pressure Compressor</h3>
-                    <p>Exploring time, frequency, and time-frequency domains for vibration signal analysis...</p>
-                    <!-- Add research file link -->
+            <!-- Research Card 1 -->
+            <div class="research-card">
+                <h3 class="research-title">Vibration Noise Analysis for High Pressure Compressors</h3>
+                <div class="collapsible-content">
+                    <p>Exploring time, frequency, and time-frequency domains for vibration signal analysis using AI and ML models for fault detection.</p>
+                    <!-- Add research link here -->
                     <a href="link-to-research-file" class="btn research-link">View Research</a>
                 </div>
+            </div>
 
-                <!-- Research 2 -->
-                <div class="research-card animate-slide-up">
-                    <h3 class="research-title">Deep Transfer Learning for Fault Detection</h3>
-                    <p>Using deep transfer learning for automatic feature extraction and fault recognition in machinery...</p>
-                    <!-- Add research file link -->
+            <!-- Research Card 2 -->
+            <div class="research-card">
+                <h3 class="research-title">Deep Transfer Learning for Fault Detection</h3>
+                <div class="collapsible-content">
+                    <p>Implementing deep transfer learning for automating feature extraction and fault recognition in industrial machines.</p>
+                    <!-- Add research link here -->
                     <a href="link-to-research-file" class="btn research-link">View Research</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Achievements Section with List and Icons -->
+    <!-- Skills Section with Progress Bars -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title animate-fade-in">Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-bar animate-grow">
+                    <p>Python</p>
+                    <div class="bar"><span style="width: 85%;"></span></div>
+                </div>
+                <div class="skill-bar animate-grow">
+                    <p>Embedded C</p>
+                    <div class="bar"><span style="width: 75%;"></span></div>
+                </div>
+                <div class="skill-bar animate-grow">
+                    <p>VHDL</p>
+                    <div class="bar"><span style="width: 70%;"></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievements Section -->
     <section id="achievements" class="section">
         <div class="container">
             <h2 class="section-title animate-fade-in">Achievements</h2>
 
             <ul class="achievements-list">
-                <li><span class="icon">🏅</span> Selected among the top 24 projects in MS101 at IIT Bombay (2023)</li>
+                <li><span class="icon">🏅</span> Selected in top 24 projects in MS101 from 700+ students</li>
                 <li><span class="icon">🎓</span> 98.12 Percentile in JEE Advanced</li>
-                <li><span class="icon">📜</span> Ranked 44th in AMUEEE</li>
-                <li><span class="icon">📈</span> Achieved All India Rank in multiple competitive exams</li>
+                <li><span class="icon">📜</span> All India Rank 44 in AMUEEE</li>
+                <li><span class="icon">📈</span> Achieved top 1 percentile in JEE Mains</li>
             </ul>
         </div>
     </section>
@@ -153,8 +168,8 @@
 
             <!-- Contact Links -->
             <p>Email: <a href="mailto:22b3922@iitb.ac.in">22b3922@iitb.ac.in</a></p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/jatin-kumar/">Jatin Kumar</a></p>
-            <p>GitHub: <a href="https://github.com/jatin-kumar">github.com/jatin-kumar</a></p>
+            <p>LinkedIn: <a href="https://www.linkedin.com/in/jatin-kumar-iitb/">Jatin Kumar</a></p>
+            <p>GitHub: <a href="https://github.com/brycisliova">github.com/jatin-kumar</a></p>
 
             <!-- Social Media Icons -->
             <div class="social-icons">

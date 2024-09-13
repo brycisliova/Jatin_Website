@@ -8,16 +8,11 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
     });
 });
 
-// Collapsible Sections for Projects
-const coll = document.querySelectorAll(".collapsible");
-coll.forEach(button => {
-    button.addEventListener("click", function() {
-        this.classList.toggle("active");
-        const content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
+// Collapsible Sections for Research
+const researchCards = document.querySelectorAll('.research-card');
+researchCards.forEach(card => {
+    card.addEventListener('click', function() {
+        const content = this.querySelector('.collapsible-content');
+        content.style.display = content.style.display === 'block' ? 'none' : 'block';
     });
 });
