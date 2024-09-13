@@ -4,97 +4,170 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jatin Kumar - Electrical Engineer</title>
+    <!-- Link to CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Link to JS -->
     <script src="script.js" defer></script>
 </head>
 <body>
-    <header>
+
+    <!-- Sticky Header with Navigation Bar -->
+    <header id="main-header">
         <div class="container">
-            <h1>Jatin Kumar</h1>
-            <p>Electrical Engineering Dual Degree (B.Tech + M.Tech)</p>
-            <nav>
+            <h1 class="animate-fade-in">Jatin Kumar</h1>
+            <p class="animate-fade-in">Electrical Engineering Dual Degree (B.Tech + M.Tech)</p>
+            <nav id="main-nav">
                 <ul>
-                    <li><a href="#about">Biography</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#research">Research</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="intro">
-        <div class="intro-text">
-            <h2>Welcome!</h2>
-            <p>I am Jatin Kumar, an Electrical Engineering student at IIT Bombay, passionate about semiconductor devices, signal processing, and machine learning.</p>
-        </div>
-    </section>
-
-    <section id="about">
-        <div class="container">
-            <h2>Biography</h2>
-            <p>Currently pursuing a Dual Degree (B.Tech. + M.Tech.) at IIT Bombay, I have been involved in a wide range of projects and research experiences...</p>
-            <!-- Add more biography content here -->
-        </div>
-    </section>
-
-    <section id="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <!-- Collapsible Project Example -->
-            <div class="collapsible">
-                <button class="collapsible-header">Low Cost Solar Photometer</button>
-                <div class="collapsible-content">
-                    <p>Developed a reliable LED-based haze sensor circuit with a custom PCB and LM741 OpAmp...</p>
-                    <!-- Space for uploading links or files -->
-                    <!-- <a href="link-to-project-files">Project Link or File</a> -->
-                </div>
+    <!-- Hero Section with Parallax Scrolling Effect -->
+    <section id="hero">
+        <div class="parallax">
+            <div class="hero-content animate-slide-up">
+                <h2>Welcome to My Portfolio</h2>
+                <p>Exploring the world of electrical engineering, semiconductor devices, and machine learning.</p>
+                <!-- Call to Action Button -->
+                <a href="#projects" class="btn animate-fade-in">View My Work</a>
             </div>
+        </div>
+    </section>
+
+    <!-- About Section with Subsections for Education and Skills -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title animate-fade-in">About Me</h2>
+            <p>I am currently pursuing a Dual Degree (B.Tech + M.Tech) in Electrical Engineering from IIT Bombay...</p>
             
-            <div class="collapsible">
-                <button class="collapsible-header">RISC Processor Design</button>
-                <div class="collapsible-content">
-                    <p>Designed a 16-bit multicycle datapath using VHDL for the IITB-RISC instruction set...</p>
-                    <!-- Space for uploading links or files -->
-                    <!-- <a href="link-to-project-files">Project Link or File</a> -->
+            <!-- Education Subsection -->
+            <div class="subsection" id="education">
+                <h3 class="animate-slide-left">Education</h3>
+                <p>B.Tech + M.Tech, Electrical Engineering, IIT Bombay (2027 expected)</p>
+            </div>
+
+            <!-- Skills Subsection -->
+            <div class="subsection" id="skills">
+                <h3 class="animate-slide-left">Skills</h3>
+                <ul class="skills-list">
+                    <li>Programming: C, C++, Python, Embedded C, Assembly</li>
+                    <li>Software: LTSpice, Fusion360, Keil, Figma</li>
+                    <li>Libraries: TensorFlow, Keras, Numpy, Pandas</li>
+                </ul>
+            </div>
+
+            <!-- Profile Image Placeholder -->
+            <img src="img/profile.jpg" alt="Profile Picture" class="profile-img animate-fade-in">
+            <!-- <Place your image in the img folder and update the src value to reflect the file path> -->
+        </div>
+    </section>
+
+    <!-- Projects Section with Collapsible Subsections -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title animate-fade-in">Projects</h2>
+
+            <!-- Project 1 -->
+            <div class="project">
+                <h3 class="project-title animate-slide-left">Low Cost Solar Photometer</h3>
+                <div class="project-content animate-fade-in">
+                    <p>Developed a reliable LED-based haze sensor circuit with an LM741 OpAmp and custom PCB design.</p>
+                    <!-- Add project image -->
+                    <img src="img/solar-photometer.jpg" alt="Solar Photometer" class="project-img">
+                    <!-- Add link to project files or GitHub -->
+                    <a href="link-to-project-files" class="btn project-link">View Project</a>
                 </div>
             </div>
-            
-            <div class="collapsible">
-                <button class="collapsible-header">ECG Amplifier Circuit</button>
-                <div class="collapsible-content">
-                    <p>Engineered an ECG Amplifier Circuit with noise mitigation techniques...</p>
-                    <!-- Space for uploading links or files -->
-                    <!-- <a href="link-to-project-files">Project Link or File</a> -->
+
+            <!-- Collapsible Subsection for More Projects -->
+            <button class="collapsible">More Projects</button>
+            <div class="collapsible-content">
+                <!-- Project 2 -->
+                <div class="project">
+                    <h3 class="project-title">RISC Processor Design</h3>
+                    <div class="project-content">
+                        <p>Designed a 16-bit multicycle datapath using VHDL for the IITB-RISC instruction set...</p>
+                        <!-- Add project image -->
+                        <img src="img/risc-processor.jpg" alt="RISC Processor Design" class="project-img">
+                        <!-- Add link to project files or GitHub -->
+                        <a href="link-to-project-files" class="btn project-link">View Project</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="research">
+    <!-- Research Section with Animated Cards -->
+    <section id="research" class="section">
         <div class="container">
-            <h2>Research</h2>
-            <!-- Research section with collapsible details similar to Projects -->
-            <div class="collapsible">
-                <button class="collapsible-header">Vibration Noise Analysis for High Pressure Compressor</button>
-                <div class="collapsible-content">
+            <h2 class="section-title animate-fade-in">Research</h2>
+
+            <!-- Research Project Cards -->
+            <div class="research-cards">
+                <!-- Research 1 -->
+                <div class="research-card animate-slide-up">
+                    <h3 class="research-title">Vibration Noise Analysis for High Pressure Compressor</h3>
                     <p>Exploring time, frequency, and time-frequency domains for vibration signal analysis...</p>
+                    <!-- Add research file link -->
+                    <a href="link-to-research-file" class="btn research-link">View Research</a>
+                </div>
+
+                <!-- Research 2 -->
+                <div class="research-card animate-slide-up">
+                    <h3 class="research-title">Deep Transfer Learning for Fault Detection</h3>
+                    <p>Using deep transfer learning for automatic feature extraction and fault recognition in machinery...</p>
+                    <!-- Add research file link -->
+                    <a href="link-to-research-file" class="btn research-link">View Research</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact">
+    <!-- Achievements Section with List and Icons -->
+    <section id="achievements" class="section">
         <div class="container">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:jatin.kumar@iitb.ac.in">jatin.kumar@iitb.ac.in</a></p>
+            <h2 class="section-title animate-fade-in">Achievements</h2>
+
+            <ul class="achievements-list">
+                <li><span class="icon">🏅</span> Selected among the top 24 projects in MS101 at IIT Bombay (2023)</li>
+                <li><span class="icon">🎓</span> 98.12 Percentile in JEE Advanced</li>
+                <li><span class="icon">📜</span> Ranked 44th in AMUEEE</li>
+                <li><span class="icon">📈</span> Achieved All India Rank in multiple competitive exams</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Contact Section with Social Icons -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title animate-fade-in">Contact Me</h2>
+            <p>If you'd like to collaborate or discuss a project, feel free to reach out to me!</p>
+
+            <!-- Contact Links -->
+            <p>Email: <a href="mailto:22b3922@iitb.ac.in">22b3922@iitb.ac.in</a></p>
             <p>LinkedIn: <a href="https://www.linkedin.com/in/jatin-kumar/">Jatin Kumar</a></p>
             <p>GitHub: <a href="https://github.com/jatin-kumar">github.com/jatin-kumar</a></p>
+
+            <!-- Social Media Icons -->
+            <div class="social-icons">
+                <a href="https://www.linkedin.com/in/jatin-kumar-iitb/" target="_blank"><img src="img/linkedin-icon.png" alt="LinkedIn"></a>
+                <a href="https://github.com/brycisliova" target="_blank"><img src="img/github-icon.png" alt="GitHub"></a>
+            </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
         <p>© 2024 Jatin Kumar | All Rights Reserved</p>
     </footer>
+
 </body>
 </html>

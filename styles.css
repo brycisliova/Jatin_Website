@@ -1,9 +1,10 @@
-/* General styles */
+/* General Styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f9f9f9;
+    color: #333;
 }
 
 .container {
@@ -12,87 +13,265 @@ body {
     padding: 20px;
 }
 
-header {
+.section {
+    padding: 60px 0;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Header */
+#main-header {
     background-color: #333;
     color: white;
     padding: 20px 0;
     text-align: center;
 }
 
-header h1 {
+#main-header h1 {
     margin: 0;
-    font-size: 2.5em;
+    font-size: 2.5rem;
 }
 
-nav ul {
-    list-style-type: none;
+#main-header p {
+    font-size: 1.2rem;
+}
+
+#main-nav ul {
+    list-style: none;
     padding: 0;
 }
 
-nav ul li {
+#main-nav ul li {
     display: inline;
-    margin-right: 20px;
+    margin: 0 15px;
 }
 
-nav ul li a {
+#main-nav ul li a {
     color: white;
     text-decoration: none;
-    transition: color 0.3s;
+    font-weight: 600;
 }
 
-nav ul li a:hover {
-    color: #1e90ff;
+#main-nav ul li a:hover {
+    color: #f1c40f;
 }
 
-section {
-    padding: 50px 0;
+/* Hero Section with Parallax */
+#hero {
+    height: 100vh;
+    background: url('img/hero-bg.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
-h2 {
-    color: #333;
-    font-size: 2em;
-    margin-bottom: 20px;
+.hero-content {
+    max-width: 600px;
+    color: white;
 }
 
-/* Collapsible section styling */
-.collapsible {
-    background-color: #f1f1f1;
+.hero-content h2 {
+    font-size: 3rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+}
+
+.hero-content .btn {
+    background-color: #f1c40f;
+    color: #333;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-content .btn:hover {
+    background-color: #d4ac0d;
+}
+
+/* About Section */
+#about {
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2.5rem;
+}
+
+#about img.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    margin-top: 20px;
+}
+
+#about .subsection {
+    margin-top: 40px;
+}
+
+#about .skills-list {
+    list-style: none;
+    padding: 0;
+}
+
+#about .skills-list li {
+    font-size: 1.1rem;
     margin: 10px 0;
 }
 
-.collapsible-header {
-    background-color: #333;
-    color: white;
-    cursor: pointer;
-    padding: 10px;
-    text-align: left;
-    font-size: 1.2em;
-    border: none;
-    outline: none;
-    transition: background-color 0.3s ease;
+/* Projects Section */
+#projects {
+    background-color: #f4f4f4;
 }
 
-.collapsible-header:hover {
-    background-color: #1e90ff;
+#projects .project {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+#projects .project img.project-img {
+    max-width: 400px;
+    margin-top: 20px;
+}
+
+#projects .project .btn {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#projects .project .btn:hover {
+    background-color: #2980b9;
+}
+
+/* Research Section with Cards */
+#research .research-cards {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+#research .research-card {
+    width: 45%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
+}
+
+#research .research-card .btn {
+    background-color: #e74c3c;
+    color: white;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#research .research-card .btn:hover {
+    background-color: #c0392b;
+}
+
+/* Achievements Section */
+#achievements .achievements-list {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#achievements .achievements-list li {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+#achievements .achievements-list li .icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #3498db;
+}
+
+/* Contact Section */
+#contact .social-icons {
+    margin-top: 20px;
+}
+
+#contact .social-icons img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Collapsible Projects Section */
+.collapsible {
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 1.2rem;
+    margin: 20px 0;
 }
 
 .collapsible-content {
     display: none;
-    background-color: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
+    overflow: hidden;
+    padding: 0 20px;
 }
 
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
+/* Animations */
+.animate-fade-in {
+    animation: fadeIn 2s ease;
 }
 
-a {
-    color: #1e90ff;
-    text-decoration: none;
+.animate-slide-up {
+    animation: slideUp 1.5s ease;
+}
+
+.animate-slide-left {
+    animation: slideLeft 1.5s ease;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+    0% { transform: translateY(30px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideLeft {
+    0% { transform: translateX(-30px); opacity: 0; }
+    100% { transform: translateX(0); opacity: 1; }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .research-cards {
+        display: block;
+    }
+
+    .research-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
 }
