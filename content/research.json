@@ -1,0 +1,80 @@
+[
+  {
+    "id": "ddr4-phy-rx",
+    "title": "DDR4 PHY Receiver Front-End",
+    "short": "A 1.6 Gbps receiver front-end in TSMC 65 nm CMOS with a source-degenerated CTLE.",
+    "kind": "Dual Degree Project",
+    "status": "In progress",
+    "period": "Aug 2025 – present",
+    "where": "Department of Electrical Engineering, IIT Bombay",
+    "advisors": [{ "name": "Prof. Laxmeesha Somappa", "role": "Guide" }],
+    "summary": [
+      "At memory and SerDes data rates the channel does a lot of damage before the receiver sees a single bit. This project builds the receiver front-end for a 1.6 Gbps DDR4 PHY in TSMC 65 nm CMOS, starting from a physically realistic model of the FR4 channel and working towards equalization that the channel actually calls for.",
+      "I first characterised how FR4 loss changes with trace length, which shows when a receiver can do without equalization and when it cannot. At 1.6 Gbps the loss over 2.5 cm is below 0.02 dB, so short traces need little help. Beyond that regime the CTLE does the work: I designed a source-degenerated CTLE with deliberate pole-zero placement and 8.87 dB of peaking."
+    ],
+    "results": [
+      { "label": "Eye SNR", "from": "8.39", "to": "18.45", "unit": "dB" },
+      { "label": "Eye height", "from": "253", "to": "831", "unit": "mV" },
+      { "label": "Jitter", "delta": "−69%", "note": "reduction" }
+    ],
+    "resultsNote": "Before and after the CTLE, on an 8 m channel.",
+    "points": [
+      "FR4 channel loss measured across trace lengths, giving the length–data-rate regime in which receiver equalization becomes necessary.",
+      "Source-degenerated CTLE with pole-zero placement, 8.87 dB peaking.",
+      "Next: CTLE–DFE–CDR integration, full-rate transient and BER validation, then layout-parasitic and PVT-corner analysis."
+    ],
+    "tags": ["High-speed links", "Equalization", "CTLE", "TSMC 65 nm", "Cadence Virtuoso"],
+    "diagram": "rx-chain",
+    "figure": null
+  },
+  {
+    "id": "mos2-dft",
+    "title": "First-Principles Study of Monolayer 2H-MoS₂",
+    "short": "DFT-PBE characterisation of monolayer MoS₂: structure, elasticity, bands, phonons and spin–orbit coupling.",
+    "kind": "Research visit, RPIT’26",
+    "status": "Completed",
+    "period": "Jun 2026 – Aug 2026",
+    "where": "Laboratoire des Solides Irradiés (LSI), École Polytechnique, Institut Polytechnique de Paris",
+    "advisors": [
+      { "name": "Dr. Raja Sen", "role": "Main supervisor and co-author" },
+      { "name": "Dr. Nathalie Vast", "role": "Scientific supervisor" }
+    ],
+    "summary": [
+      "A systematic first-principles characterisation of monolayer 2H-MoS₂ using density-functional theory (PBE) in Quantum ESPRESSO. The work covers the structural, elastic, electronic, vibrational and spin–orbit properties of the material, so that each computed quantity can be checked against the others and against the literature.",
+      "The elastic constants give a layer incompressibility modulus of about 84 N/m, within roughly 1% of published values, which is the check I used to trust the setup before moving on. The electronic structure shows a direct gap of about 1.68 eV at K, and the phonon dispersion has real frequencies throughout the Brillouin zone, so the structure is dynamically stable at equilibrium. Spin–orbit coupling splits the K-valley valence band by 148 meV, and a maximally-localised Wannier function model reproduces the bands with a few meV of RMS interpolation error."
+    ],
+    "results": [
+      { "label": "Layer incompressibility", "value": "~84", "unit": "N/m", "note": "within ~1% of literature" },
+      { "label": "Direct gap at K", "value": "~1.68", "unit": "eV" },
+      { "label": "K-valley SOC splitting", "value": "148", "unit": "meV" }
+    ],
+    "resultsNote": "",
+    "points": [
+      "2D elastic constants and the mechanical properties derived from them.",
+      "Band structure and phonon dispersion; no imaginary frequencies, so the structure is dynamically stable.",
+      "Spin–orbit coupling and maximally-localised Wannier functions, with few-meV RMS band interpolation error."
+    ],
+    "tags": ["DFT", "Quantum ESPRESSO", "2D materials", "Phonons", "Wannier functions"],
+    "diagram": null,
+    "figure": null
+  },
+  {
+    "id": "nus-yfp",
+    "title": "NUS Young Fellowship Programme",
+    "short": "Selected for the 2025 programme at the National University of Singapore.",
+    "kind": "Fellowship",
+    "status": "Completed",
+    "period": "Jun 2025 – Jul 2025",
+    "where": "NUS Graduate School and SCALE, National University of Singapore",
+    "advisors": [],
+    "summary": [
+      "Selected for the 2025 NUS Young Fellowship Programme. The programme combined mentored research tutorials, conversations with faculty and visits to labs across Singapore. I presented a research poster and an oral talk, took part in the 3-Minute Thesis (3MT) challenge, and spent the programme with a cohort from many disciplines who were all weighing research and doctoral paths."
+    ],
+    "results": [],
+    "resultsNote": "",
+    "points": [],
+    "tags": ["Poster", "Oral presentation", "3MT"],
+    "diagram": null,
+    "figure": null
+  }
+]

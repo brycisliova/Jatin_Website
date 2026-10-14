@@ -1,0 +1,97 @@
+[
+  {
+    "id": "sar-adc",
+    "title": "10-bit Differential SAR ADC",
+    "course": "EE 719 · Mixed-Signal VLSI Design",
+    "term": "Spring 2026",
+    "guide": "Prof. Maryam Shojaei Baghini",
+    "area": ["Mixed-signal"],
+    "summary": "A 10-bit differential SAR ADC designed in Cadence Virtuoso and verified for 200 MHz sampling.",
+    "highlight": "62.475 dB SNDR · 10.084-bit ENOB",
+    "points": [
+      "Designed the comparator controller, with feedback timing that completes 10 comparisons inside a 4.5 ns hold.",
+      "Integrated the full 10-bit differential converter and validated SAR conversion at 200 MHz sampling across the input range.",
+      "Ran full-cycle transient simulations across conditions, then characterised the converter with INL/DNL and FFT tests. Cadence and analytical results agree across operating conditions."
+    ],
+    "tools": ["Cadence Virtuoso"]
+  },
+  {
+    "id": "apd-lidar",
+    "title": "InGaAs/AlInAsSb SACM Avalanche Photodiode for 1550 nm LiDAR",
+    "course": "MM 618 · Optoelectronic Properties, Materials & Devices",
+    "term": "Spring 2026",
+    "guide": "Prof. Tanushree H. Choudhury",
+    "area": ["Devices"],
+    "summary": "A device-level analysis of a separate-absorption-charge-multiplication APD for 1550 nm LiDAR.",
+    "highlight": "0.76 eV conduction-band offset · ~49.3% single-pass absorption · M<sub>max</sub> ~17",
+    "points": [
+      "Worked out band offsets, Fermi levels and alignment with Anderson's model, and built MATLAB transfer-matrix (TMM) simulations for the electric-field, absorption and EQE profiles.",
+      "Evaluated noise and responsivity with McIntyre excess-noise analysis, finding k between 0.02 and 0.04 and a maximum multiplication of about 17.",
+      "Used Vegard's law to quantify lattice mismatch and thermal strain against InP, a mismatch of 0.26%."
+    ],
+    "tools": ["MATLAB", "TMM"]
+  },
+  {
+    "id": "two-stage-ota",
+    "title": "Two-Stage OTA with Frequency Compensation",
+    "course": "EE 618 · CMOS Analog VLSI Design",
+    "term": "Autumn 2025",
+    "guide": "Prof. Rajesh Zele",
+    "area": ["Analog"],
+    "summary": "A differential two-stage OTA, taken from schematic through full-custom layout and extraction.",
+    "highlight": "63 dB gain · 118 MHz UGF · 113 V/µs · 0.3 mW",
+    "points": [
+      "Designed the amplifier in Cadence Virtuoso with RC and tracking compensation, reaching 63 dB gain, 118 MHz unity-gain frequency, 113 V/µs slew rate and 60–72° phase margin within a 0.3 mW power budget.",
+      "Drew a full-custom layout of 34.35 × 45 µm² with common-centroid matching and structured routing on the critical devices.",
+      "Cleared DRC and LVS, then ran Quantus parasitic extraction to validate the final layout."
+    ],
+    "tools": ["Cadence Virtuoso", "Quantus"]
+  },
+  {
+    "id": "arbiter-switch",
+    "title": "Arbiter-Based 2×2 Switch",
+    "course": "EE 789 · Algorithmic Design of Digital Systems",
+    "term": "Spring 2026",
+    "guide": "Prof. Madhav Desai",
+    "area": ["Digital"],
+    "summary": "Three 2×2 packet switch architectures built from arbiters, queues, muxes and demuxes.",
+    "highlight": "",
+    "points": [
+      "Designed packet-level arbiter mux and demux state machines with counters, so a packet is served completely before the switch changes input.",
+      "Added priority arbitration with packet-level toggling, which keeps access fair when both inputs are active.",
+      "Built three switch architectures from queues, arbiter muxes and demuxes for distinct routing paths, and validated all of them with the AHIR testbench and GHDL simulation."
+    ],
+    "tools": ["AHIR", "GHDL"]
+  },
+  {
+    "id": "noise-cancellation",
+    "title": "Noise Cancellation and Digital Filtering in Verilog",
+    "course": "EE 671 · VLSI Design",
+    "term": "Autumn 2024",
+    "guide": "Prof. Laxmeesha Somappa",
+    "area": ["Digital", "Physical design"],
+    "summary": "Four noise-reduction filters in RTL, carried through synthesis, place-and-route and full-custom layout.",
+    "highlight": "",
+    "points": [
+      "Implemented LMS, spectral subtraction, Wiener and median filters in Verilog, each with a testbench.",
+      "Synthesised with OpenLane, including floorplanning, placement and routing, and extracted timing and power metrics.",
+      "Drew full-custom layouts in Magic, ran DRC, LVS and antenna checks and fixed the violations, producing GDS-ready layouts, and weighed area, power and frequency trade-offs."
+    ],
+    "tools": ["Verilog", "OpenLane", "Magic"]
+  },
+  {
+    "id": "ecg-amplifier",
+    "title": "ECG Amplifier Circuit",
+    "course": "EE 230 · Analog Circuits Laboratory",
+    "term": "Spring 2024",
+    "guide": "Prof. Anil Kottantharayil",
+    "area": ["Analog"],
+    "summary": "An electrocardiogram front-end built from scratch, with right-leg drive and notch filtering.",
+    "highlight": "",
+    "points": [
+      "Built the complete amplifier chain with right-leg drive (RLD) and a notch filter to pick up the cardiac signal cleanly and suppress interference.",
+      "Debugged circuit performance together with teammates."
+    ],
+    "tools": []
+  }
+]

@@ -1,0 +1,7 @@
+[
+  { "when": "Now", "text": "Teaching assistant for EE709, Testing and Verification of VLSI Circuits, and extending the DDR4 receiver towards CTLE–DFE–CDR integration." },
+  { "when": "Aug 2026", "text": "Finished my research visit at LSI, École Polytechnique, on a first-principles study of monolayer MoS₂." },
+  { "when": "Spring 2026", "text": "Completed a 10-bit differential SAR ADC for Mixed-Signal VLSI Design: 62.475 dB SNDR and 10.084-bit ENOB.", "link": "projects/#sar-adc" },
+  { "when": "Aug 2025", "text": "Started my dual degree project on a 1.6 Gbps DDR4 PHY receiver front-end.", "link": "research/#ddr4-phy-rx" },
+  { "when": "Jun 2025", "text": "Fellow at the NUS Young Fellowship Programme in Singapore.", "link": "research/#nus-yfp" }
+]

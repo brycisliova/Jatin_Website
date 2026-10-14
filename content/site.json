@@ -1,0 +1,40 @@
+{
+  "name": "Jatin Kumar",
+  "title": "Jatin Kumar",
+  "role": "Dual Degree (B.Tech. + M.Tech.), Electrical Engineering",
+  "institute": "Indian Institute of Technology Bombay",
+  "specialization": "Integrated Circuits and Systems",
+  "graduation": "2027",
+  "description": "Jatin Kumar is a dual-degree student in Electrical Engineering at IIT Bombay working on high-speed receiver circuits, analog and mixed-signal design, and first-principles studies of 2D materials.",
+
+  "domain": "",
+  "url": "",
+
+  "availability": "I am applying to PhD programmes for 2027 and would be glad to hear from groups working on high-speed interfaces, analog and mixed-signal circuits, or device-level modelling.",
+
+  "contact": {
+    "email": "",
+    "location": "Mumbai, India"
+  },
+
+  "links": {
+    "github": "",
+    "linkedin": "",
+    "scholar": "",
+    "orcid": "",
+    "blog": ""
+  },
+
+  "cv": {
+    "file": "cv/Jatin_Kumar_CV.pdf"
+  },
+
+  "academics": {
+    "showCpi": false,
+    "cpi": ""
+  },
+
+  "notes": {
+    "show": "auto"
+  }
+}
