@@ -1,0 +1,37 @@
+{
+  "intro": "Outside the lab I read, cook, practise yoga and occasionally build things that fly. This page is a short, informal account of that.",
+  "sections": [
+    {
+      "id": "reading",
+      "title": "Reading",
+      "body": "I read mostly literature and philosophy, and I like books that stay with me after the last page. A few I keep returning to:",
+      "books": [
+        { "title": "Aristotle and Dante Discover the Secrets of the Universe", "author": "Benjamin Alire Sáenz" },
+        { "title": "Aristotle and Dante Dive into the Waters of the World", "author": "Benjamin Alire Sáenz" },
+        { "title": "Gunahon Ka Devta", "author": "Dharamvir Bharati" },
+        { "title": "The Alchemist", "author": "Paulo Coelho" },
+        { "title": "Man’s Search for Meaning", "author": "Viktor E. Frankl" }
+      ]
+    },
+    {
+      "id": "writing",
+      "title": "Writing",
+      "body": "I write about people, emotions, relationships and the small turns of everyday life: reflections, letters and thoughts that do not fit anywhere else. At IIT Bombay I also edited for the department's editorial board, where I interviewed alumni about their careers and wrote for the department magazine, newsletters and social media."
+    },
+    {
+      "id": "cooking",
+      "title": "Cooking",
+      "body": "I enjoy trying new recipes, ingredients and cuisines. For me cooking is a hands-on way to learn: you change one thing, taste, and find out what happened."
+    },
+    {
+      "id": "movement",
+      "title": "Yoga",
+      "body": "I completed NSO Yoga at IIT Bombay and took on the 54 consecutive Surya Namaskar challenge."
+    },
+    {
+      "id": "making",
+      "title": "Making things",
+      "body": "I earned an Exemplary Design & Innovation Certificate in a two-month RC plane competition. My MS101 project was among the top 24 of more than 700 undergraduate projects and was shown at the IIT Bombay project exhibition."
+    }
+  ]
+}

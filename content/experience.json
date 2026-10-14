@@ -1,0 +1,80 @@
+{
+  "education": [
+    {
+      "degree": "B.Tech. + M.Tech. (Dual Degree), Electrical Engineering",
+      "school": "Indian Institute of Technology Bombay",
+      "detail": "Specialization: Integrated Circuits and Systems",
+      "period": "2022 – 2027 (expected)"
+    }
+  ],
+  "experience": [
+    {
+      "title": "Dual Degree Project: DDR4 PHY Receiver Front-End",
+      "org": "IIT Bombay · Prof. Laxmeesha Somappa",
+      "period": "Aug 2025 – present",
+      "ref": "ddr4-phy-rx"
+    },
+    {
+      "title": "Research visit, RPIT’26: First-principles study of monolayer MoS₂",
+      "org": "LSI, École Polytechnique, Institut Polytechnique de Paris · Dr. Raja Sen, Dr. Nathalie Vast",
+      "period": "Jun 2026 – Aug 2026",
+      "ref": "mos2-dft"
+    },
+    {
+      "title": "NUS Young Fellowship Programme, Fellow",
+      "org": "National University of Singapore · NUS Graduate School and SCALE",
+      "period": "Jun 2025 – Jul 2025",
+      "ref": "nus-yfp"
+    },
+    {
+      "title": "Patent Analysis Internship",
+      "org": "Industrial Research and Consultancy Centre, IIT Bombay",
+      "period": "May 2024 – Jul 2024",
+      "points": [
+        "Worked with 15+ professors and the Dean R&D office to make research available to industry stakeholders.",
+        "Wrote non-technical summaries for 45+ patents for a compendium of granted patents.",
+        "Part of a team of 20+ students compiling and presenting the information."
+      ]
+    }
+  ],
+  "service": [
+    {
+      "title": "Teaching Assistant, EE709: Testing and Verification of VLSI Circuits",
+      "org": "Department of Electrical Engineering, IIT Bombay · Prof. Madhav Desai",
+      "period": "Ongoing",
+      "points": [
+        "Evaluate assignments and answer scripts, answer student queries, and invigilate quizzes and the end-semester exam."
+      ]
+    },
+    {
+      "title": "Editor, Department Editorial Board (EESA)",
+      "org": "Department of Electrical Engineering, IIT Bombay",
+      "period": "Jul 2024 – Jul 2025",
+      "points": [
+        "Interviewed alumni for articles on career journeys and departmental achievements.",
+        "Worked with senior students on resume repositories, and wrote a blog on Women in Semiconductors (WiSH) and on the EDL flagship lab course of the WEL Lab.",
+        "Managed publication, from gathering material to checking quality for timely releases, and kept the department's social media active."
+      ]
+    }
+  ],
+  "recognition": [
+    {
+      "title": "NUS Young Fellowship Programme, 2025",
+      "detail": "Selected as a fellow."
+    },
+    {
+      "title": "Exemplary Design & Innovation Certificate",
+      "detail": "Two-month RC plane competition."
+    },
+    {
+      "title": "Top 24 of 700+ projects in MS101",
+      "detail": "Showcased at the IIT Bombay project exhibition for innovation and design."
+    }
+  ],
+  "skills": [
+    { "group": "Circuit design and EDA", "items": ["Cadence Virtuoso", "Genus", "Innovus", "Quantus", "OpenLane", "Magic", "KiCad", "LTSpice"] },
+    { "group": "Hardware description", "items": ["Verilog", "VHDL", "AHIR", "GHDL"] },
+    { "group": "Computation", "items": ["Python", "MATLAB", "Quantum ESPRESSO"] },
+    { "group": "Documents and web", "items": ["LaTeX", "HTML", "CSS"] }
+  ]
+}

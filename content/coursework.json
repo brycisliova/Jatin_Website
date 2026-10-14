@@ -1,0 +1,75 @@
+{
+  "intro": "The courses below are the ones that shaped my interests most. For official grades, please refer to the transcript, which I am happy to provide.",
+  "groups": [
+    {
+      "name": "Circuits and VLSI",
+      "courses": [
+        { "name": "CMOS Analog VLSI Design", "code": "EE 618", "project": "two-stage-ota" },
+        { "name": "Mixed-Signal VLSI Design", "code": "EE 719", "project": "sar-adc" },
+        { "name": "VLSI Design", "code": "EE 671", "project": "noise-cancellation" },
+        { "name": "Algorithmic Design of Digital Systems", "code": "EE 789", "project": "arbiter-switch" },
+        { "name": "Testing and Verification of VLSI Circuits", "code": "EE 709", "note": "Teaching assistant" },
+        { "name": "Microprocessors" }
+      ]
+    },
+    {
+      "name": "Devices and materials",
+      "courses": [
+        { "name": "Optoelectronic Properties, Materials & Devices", "code": "MM 618", "project": "apd-lidar" },
+        { "name": "Electronic Devices" },
+        { "name": "Organic, Inorganic and Quantum Chemistry" }
+      ]
+    },
+    {
+      "name": "Signals, systems and communication",
+      "courses": [
+        { "name": "Digital Signal Processing" },
+        { "name": "Signal Processing" },
+        { "name": "Radars" },
+        { "name": "Communication Systems" },
+        { "name": "Probability and Random Processes" },
+        { "name": "Wavelets" }
+      ]
+    },
+    {
+      "name": "Mathematics",
+      "courses": [
+        { "name": "Calculus I and II" },
+        { "name": "Linear Algebra" },
+        { "name": "Ordinary and Partial Differential Equations" }
+      ]
+    },
+    {
+      "name": "Computing and data",
+      "courses": [
+        { "name": "Data Science and Machine Learning" },
+        { "name": "Computer Programming and Utilization" }
+      ]
+    },
+    {
+      "name": "Laboratories",
+      "courses": [
+        { "name": "Analog Circuits Laboratory", "code": "EE 230", "project": "ecg-amplifier" },
+        { "name": "Electronic Design Lab" },
+        { "name": "Digital Lab" },
+        { "name": "Analog Lab" },
+        { "name": "Microprocessor Lab" },
+        { "name": "Power Engineering Lab" },
+        { "name": "Control Systems Lab" },
+        { "name": "Electronic Devices Lab" },
+        { "name": "Communication Systems Lab" }
+      ]
+    },
+    {
+      "name": "Breadth",
+      "courses": [
+        { "name": "Design Thinking for Innovation" },
+        { "name": "Principles of Satellite Image Processing" },
+        { "name": "Economics" },
+        { "name": "Introduction to Psychology" },
+        { "name": "Biology" },
+        { "name": "Makerspace", "code": "MS 101" }
+      ]
+    }
+  ]
+}
