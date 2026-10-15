@@ -1,4 +1,25 @@
 (function () {
+  document.documentElement.classList.add('js');
+
+  // Menu button (small screens)
+  var toggle = document.querySelector('.menu-toggle');
+  var nav = document.getElementById('site-nav');
+  if (toggle && nav) {
+    toggle.hidden = false;
+    toggle.addEventListener('click', function () {
+      var open = nav.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  // "Back to top" appears after scrolling
+  var top = document.querySelector('.to-top');
+  if (top) {
+    var onScroll = function () { top.hidden = window.scrollY < 700; };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
   // Email address is assembled in the browser so it is not in the plain HTML.
   document.querySelectorAll('a.email').forEach(function (a) {
     var addr = a.dataset.u + '@' + a.dataset.d;
