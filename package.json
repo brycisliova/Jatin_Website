@@ -9,12 +9,13 @@
     "dev": "node scripts/dev.mjs",
     "check": "node scripts/check.mjs"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": ">=20"
+  },
   "dependencies": {
     "marked": "^15.0.0"
   },
   "devDependencies": {
-    "@fontsource-variable/newsreader": "^5.2.0",
-    "@fontsource/ibm-plex-sans": "^5.2.0"
+    "@fontsource-variable/source-sans-3": "^5.3.1"
   }
 }

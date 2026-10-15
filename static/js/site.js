@@ -1,35 +1,12 @@
 (function () {
-  var root = document.documentElement;
-
-  // Theme toggle: follow the system until the visitor chooses.
-  var themeBtn = document.querySelector('.theme-toggle');
-  if (themeBtn) {
-    themeBtn.addEventListener('click', function () {
-      var current = root.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-      var next = current === 'dark' ? 'light' : 'dark';
-      root.dataset.theme = next;
-      try { localStorage.setItem('theme', next); } catch (e) {}
-    });
-  }
-
-  // Mobile menu
-  var toggle = document.querySelector('.nav-toggle');
-  var nav = document.getElementById('site-nav');
-  if (toggle && nav) {
-    toggle.addEventListener('click', function () {
-      var open = nav.classList.toggle('open');
-      toggle.setAttribute('aria-expanded', String(open));
-    });
-  }
-
-  // Email address is assembled at click time to keep it out of plain HTML.
+  // Email address is assembled in the browser so it is not in the plain HTML.
   document.querySelectorAll('a.email').forEach(function (a) {
     var addr = a.dataset.u + '@' + a.dataset.d;
     a.setAttribute('href', 'mailto:' + addr);
     a.setAttribute('title', addr);
   });
 
-  // Project filters (hidden without JS, so every project stays visible)
+  // Project filters (hidden without JavaScript, so every project stays visible)
   var filters = document.querySelector('.filters');
   if (filters) {
     filters.hidden = false;
