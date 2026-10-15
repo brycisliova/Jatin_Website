@@ -5,15 +5,75 @@
     "course": "EE 719 · Mixed-Signal VLSI Design",
     "term": "Spring 2026",
     "guide": "Prof. Maryam Shojaei Baghini",
-    "area": ["Mixed-signal"],
-    "summary": "A 10-bit differential SAR ADC designed in Cadence Virtuoso and verified for 200 MHz sampling.",
-    "highlight": "62.475 dB SNDR · 10.084-bit ENOB",
-    "points": [
-      "Designed the comparator controller, with feedback timing that completes 10 comparisons inside a 4.5 ns hold.",
-      "Integrated the full 10-bit differential converter and validated SAR conversion at 200 MHz sampling across the input range.",
-      "Ran full-cycle transient simulations across conditions, then characterised the converter with INL/DNL and FFT tests. Cadence and analytical results agree across operating conditions."
+    "team": [
+      {
+        "name": "Jatin Kumar",
+        "role": "comparator controller, comparator and ADC integration, characterization"
+      },
+      {
+        "name": "Prajwal Nayak",
+        "role": "capacitive DAC, DAC switches, SAR logic, final integration"
+      }
     ],
-    "tools": ["Cadence Virtuoso"]
+    "area": [
+      "Mixed-signal"
+    ],
+    "summary": "A 10-bit differential SAR ADC sampling at 200 MHz from a 1 V supply, with a 1 V differential full-scale range, designed in Cadence Virtuoso.",
+    "highlight": "62.475 dB SNDR and 10.084-bit ENOB at 50 MHz input",
+    "points": [
+      "Comparator controller: generates the comparison clock from the comparator's ready signal, with a 190 ps feedback inverter delay. The comparator resolves a 1 LSB input in about 238 ps, so at least 10 comparisons fit in the 4.5 ns hold phase of the 5 ns track-and-hold clock (10% track duty cycle).",
+      "Integrated the comparator, controller, capacitive DAC and SAR logic into the full converter and verified the SAR switching sequence against a hand-calculated output code.",
+      "Characterised the converter with a 4096-point coherent FFT. The ENOB from Cadence (10.084 bits) agrees with the value computed from SNDR to within 0.001 bit.",
+      "Measured INL and DNL with a differential ramp. A ramp that moves more than one LSB within a 5 ns conversion skips codes, so a slower 10240-cycle ramp was used to exercise every code."
+    ],
+    "tables": [
+      {
+        "caption": "FFT characterization.",
+        "head": [
+          "Parameter",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Sampling frequency",
+            "200 MHz"
+          ],
+          [
+            "Input frequency",
+            "50 MHz"
+          ],
+          [
+            "FFT",
+            "4096 points, coherent, rectangular window"
+          ],
+          [
+            "SNDR",
+            "62.475 dB"
+          ],
+          [
+            "SFDR",
+            "62.51 dBc"
+          ],
+          [
+            "ENOB",
+            "10.084 bits"
+          ]
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "src": "img/projects/sar-adc-fft.webp",
+        "alt": "FFT spectrum of the ADC output with a single tone at 50 MHz and a flat noise floor",
+        "caption": "FFT of the ADC output for a 50 MHz input, sampled at 200 MHz (4096 points).",
+        "width": 1000,
+        "height": 603
+      }
+    ],
+    "tools": [
+      "Cadence Virtuoso",
+      "MATLAB"
+    ]
   },
   {
     "id": "apd-lidar",
@@ -21,15 +81,196 @@
     "course": "MM 618 · Optoelectronic Properties, Materials & Devices",
     "term": "Spring 2026",
     "guide": "Prof. Tanushree H. Choudhury",
-    "area": ["Devices"],
-    "summary": "A device-level analysis of a separate-absorption-charge-multiplication APD for 1550 nm LiDAR.",
-    "highlight": "0.76 eV conduction-band offset · ~49.3% single-pass absorption · M<sub>max</sub> ~17",
-    "points": [
-      "Worked out band offsets, Fermi levels and alignment with Anderson's model, and built MATLAB transfer-matrix (TMM) simulations for the electric-field, absorption and EQE profiles.",
-      "Evaluated noise and responsivity with McIntyre excess-noise analysis, finding k between 0.02 and 0.04 and a maximum multiplication of about 17.",
-      "Used Vegard's law to quantify lattice mismatch and thermal strain against InP, a mismatch of 0.26%."
+    "team": [
+      {
+        "name": "Jatin Kumar"
+      },
+      {
+        "name": "Sthiti Padhi"
+      }
     ],
-    "tools": ["MATLAB", "TMM"]
+    "basis": "Analysis of the device reported by B. Guo et al., <i>APL Photonics</i> <b>8</b>, 116112 (2023).",
+    "area": [
+      "Devices"
+    ],
+    "summary": "An electrical, optical and materials analysis of the separate-absorption-charge-multiplication (SACM) avalanche photodiode on InP, with an InGaAs absorber and an Al<sub>0.7</sub>In<sub>0.3</sub>As<sub>0.79</sub>Sb<sub>0.21</sub> digital-alloy multiplier, for 1550 nm LiDAR detection.",
+    "highlight": "0.76 eV conduction-band offset · ~49% single-pass absorption at 1550 nm · 0.26% lattice mismatch to InP",
+    "points": [
+      "Band alignment: band parameters and Anderson heterojunction offsets for every interface. The 0.76 eV conduction-band offset between InGaAs and AlInAsSb acts as an electron barrier at the blocking layer and is why the grading layers are needed.",
+      "Fermi levels: computed layer by layer with Boltzmann, Joyce–Dixon or exact Fermi–Dirac statistics, chosen from each layer's degeneracy. This corrected our mid-semester version, which used Boltzmann statistics throughout and was off by up to 0.27 eV in the most heavily doped layer.",
+      "Equilibrium: vacuum-level analysis gives a built-in potential of about 1.12 eV across the stack, with the multiplication layer fully depleted at equilibrium.",
+      "Optics: layer optical constants from Vegard's law, and a MATLAB transfer-matrix (TMM) model for the absorption and EQE. Single-pass absorption in the 1 µm InGaAs absorber is about 49.3% at 1550 nm. The simulated EQE lies below the reported values, which we attribute to bowing of the alloy refractive indices that Vegard's law does not capture.",
+      "Materials: lattice mismatch to InP of 0.26% from Vegard's law, and thermal strain after cooling from the 470 °C growth temperature of 4.9 × 10<sup>−4</sup> in the absorber and 2.0 × 10<sup>−4</sup> in the multiplier, both within the 5 × 10<sup>−4</sup> elastic limit.",
+      "Noise: for the reported k = 0.02–0.04, McIntyre's model gives an excess noise factor of about 2.14 at a gain of 10, comparable to silicon. The reported maximum gain is about 17."
+    ],
+    "tables": [
+      {
+        "caption": "External quantum efficiency without an anti-reflection coating.",
+        "head": [
+          "Wavelength",
+          "TMM model",
+          "Reported"
+        ],
+        "rows": [
+          [
+            "1064 nm",
+            "62%",
+            "73%"
+          ],
+          [
+            "1310 nm",
+            "53.9%",
+            "61%"
+          ],
+          [
+            "1550 nm",
+            "39.5%",
+            "57%"
+          ]
+        ]
+      }
+    ],
+    "figures": [
+      {
+        "src": "img/projects/apd-eqe.webp",
+        "alt": "Simulated external quantum efficiency against wavelength with reported values marked at 1064, 1310 and 1550 nanometres",
+        "caption": "Simulated EQE (TMM, blue) against the values reported by Guo et al. (red markers).",
+        "width": 741,
+        "height": 602
+      },
+      {
+        "src": "img/projects/apd-absorption.webp",
+        "alt": "Bar chart of the fraction of light absorbed in each layer at 1064, 1310 and 1550 nanometres",
+        "caption": "Fraction of light absorbed in each layer at 1064, 1310 and 1550 nm. Most is absorbed in the undoped InGaAs layer.",
+        "width": 800,
+        "height": 601
+      }
+    ],
+    "tools": [
+      "MATLAB",
+      "TMM",
+      "Vegard's law"
+    ]
+  },
+  {
+    "id": "matmul-optimisation",
+    "title": "Matrix Multiplication: Loop Unrolling, Word Parallelism and Blocking",
+    "course": "EE 789 · Algorithmic Design of Digital Systems",
+    "term": "Spring 2026",
+    "guide": "Prof. Madhav Desai",
+    "area": [
+      "Digital"
+    ],
+    "summary": "Hardware design of a 64 × 64 int8 matrix multiplication in AHIR. The assignment first studies three optimisations separately; this part combines all three, cutting the run from 2,670,785 to 180,417 clock ticks. All 4096 outputs match the baseline.",
+    "highlight": "14.8× fewer clock ticks than the naive baseline",
+    "points": [
+      "Word parallelism: matrices are stored as 64-bit words that each pack eight int8 values (A row-major, B column-major), so a dot product reads 16 wide words instead of 128 byte-wide values.",
+      "A pipelined <code>dot8</code> operator multiplies eight byte pairs in parallel and adds them in a three-level tree.",
+      "The remaining eight-iteration loop is fully unrolled, which removes its phi-merges, condition checks and branches.",
+      "The three optimisations target different bottlenecks (memory accesses, loop control and the serial accumulation), so their gains compound. Blocking alone did not help, since AHIR has no cache to exploit."
+    ],
+    "tables": [
+      {
+        "caption": "Clock ticks for the 64 × 64 multiplication.",
+        "head": [
+          "Configuration",
+          "Ticks",
+          "Speedup"
+        ],
+        "rows": [
+          [
+            "Naive baseline",
+            "2,670,785",
+            "1.00×"
+          ],
+          [
+            "Loop unrolling only",
+            "1,749,185",
+            "1.53×"
+          ],
+          [
+            "Word parallelism only",
+            "680,129",
+            "3.93×"
+          ],
+          [
+            "Blocking only",
+            "2,691,265",
+            "0.99×"
+          ],
+          [
+            "All three combined",
+            "180,417",
+            "14.8×"
+          ]
+        ]
+      }
+    ],
+    "figures": [],
+    "tools": [
+      "AHIR"
+    ]
+  },
+  {
+    "id": "arbiter-switch",
+    "title": "2×2 Packet Switches: Shared-, Input- and Output-Queued",
+    "course": "EE 789 · Algorithmic Design of Digital Systems",
+    "term": "Spring 2026",
+    "guide": "Prof. Madhav Desai",
+    "area": [
+      "Digital"
+    ],
+    "summary": "Three 2×2 packet switch architectures in VHDL-2008, built from one common packet FIFO and small arbiter state machines, and compared on queueing, fairness and head-of-line blocking.",
+    "highlight": "",
+    "points": [
+      "Packets are sequences of 32-bit words. The header word holds an 8-bit destination, a 16-bit length and an 8-bit sequence ID, and packets are at most 64 words.",
+      "A parameterised FIFO with a combinational peek port lets an arbiter read a header without removing it. All three designs share this FIFO.",
+      "Every module is a small FSM (at most three states). Arbiters are round-robin, and a packet is served completely before the arbiter switches inputs.",
+      "Verified with three traffic scenarios (one active port, both ports to the same destination, both ports to different destinations), plus a test that shows head-of-line blocking in the input-queued design. Simulated with GHDL and inspected in GTKWave."
+    ],
+    "tables": [
+      {
+        "caption": "Comparison of the three architectures.",
+        "head": [
+          "",
+          "Shared-queue",
+          "Input-queued",
+          "Output-queued"
+        ],
+        "rows": [
+          [
+            "FIFOs",
+            "1",
+            "2",
+            "4"
+          ],
+          [
+            "Head-of-line blocking",
+            "No",
+            "Yes",
+            "No"
+          ],
+          [
+            "Throughput under contention",
+            "Full",
+            "58.6% (theoretical limit)",
+            "Full"
+          ],
+          [
+            "Hardware complexity",
+            "Low",
+            "Medium",
+            "High"
+          ]
+        ]
+      }
+    ],
+    "figures": [],
+    "tools": [
+      "VHDL-2008",
+      "GHDL",
+      "GTKWave"
+    ]
   },
   {
     "id": "two-stage-ota",
@@ -37,31 +278,22 @@
     "course": "EE 618 · CMOS Analog VLSI Design",
     "term": "Autumn 2025",
     "guide": "Prof. Rajesh Zele",
-    "area": ["Analog"],
-    "summary": "A differential two-stage OTA, taken from schematic through full-custom layout and extraction.",
-    "highlight": "63 dB gain · 118 MHz UGF · 113 V/µs · 0.3 mW",
+    "area": [
+      "Analog"
+    ],
+    "summary": "A differential two-stage OTA, taken from schematic through full-custom layout and parasitic extraction.",
+    "highlight": "63 dB gain · 118 MHz unity-gain frequency · 113 V/µs slew rate · 0.3 mW",
     "points": [
       "Designed the amplifier in Cadence Virtuoso with RC and tracking compensation, reaching 63 dB gain, 118 MHz unity-gain frequency, 113 V/µs slew rate and 60–72° phase margin within a 0.3 mW power budget.",
       "Drew a full-custom layout of 34.35 × 45 µm² with common-centroid matching and structured routing on the critical devices.",
       "Cleared DRC and LVS, then ran Quantus parasitic extraction to validate the final layout."
     ],
-    "tools": ["Cadence Virtuoso", "Quantus"]
-  },
-  {
-    "id": "arbiter-switch",
-    "title": "Arbiter-Based 2×2 Switch",
-    "course": "EE 789 · Algorithmic Design of Digital Systems",
-    "term": "Spring 2026",
-    "guide": "Prof. Madhav Desai",
-    "area": ["Digital"],
-    "summary": "Three 2×2 packet switch architectures built from arbiters, queues, muxes and demuxes.",
-    "highlight": "",
-    "points": [
-      "Designed packet-level arbiter mux and demux state machines with counters, so a packet is served completely before the switch changes input.",
-      "Added priority arbitration with packet-level toggling, which keeps access fair when both inputs are active.",
-      "Built three switch architectures from queues, arbiter muxes and demuxes for distinct routing paths, and validated all of them with the AHIR testbench and GHDL simulation."
-    ],
-    "tools": ["AHIR", "GHDL"]
+    "tables": [],
+    "figures": [],
+    "tools": [
+      "Cadence Virtuoso",
+      "Quantus"
+    ]
   },
   {
     "id": "noise-cancellation",
@@ -69,15 +301,24 @@
     "course": "EE 671 · VLSI Design",
     "term": "Autumn 2024",
     "guide": "Prof. Laxmeesha Somappa",
-    "area": ["Digital", "Physical design"],
+    "area": [
+      "Digital",
+      "Physical design"
+    ],
     "summary": "Four noise-reduction filters in RTL, carried through synthesis, place-and-route and full-custom layout.",
     "highlight": "",
     "points": [
       "Implemented LMS, spectral subtraction, Wiener and median filters in Verilog, each with a testbench.",
       "Synthesised with OpenLane, including floorplanning, placement and routing, and extracted timing and power metrics.",
-      "Drew full-custom layouts in Magic, ran DRC, LVS and antenna checks and fixed the violations, producing GDS-ready layouts, and weighed area, power and frequency trade-offs."
+      "Drew full-custom layouts in Magic, ran DRC, LVS and antenna checks and fixed the violations to produce GDS-ready layouts, and weighed area, power and frequency trade-offs."
     ],
-    "tools": ["Verilog", "OpenLane", "Magic"]
+    "tables": [],
+    "figures": [],
+    "tools": [
+      "Verilog",
+      "OpenLane",
+      "Magic"
+    ]
   },
   {
     "id": "ecg-amplifier",
@@ -85,13 +326,17 @@
     "course": "EE 230 · Analog Circuits Laboratory",
     "term": "Spring 2024",
     "guide": "Prof. Anil Kottantharayil",
-    "area": ["Analog"],
+    "area": [
+      "Analog"
+    ],
     "summary": "An electrocardiogram front-end built from scratch, with right-leg drive and notch filtering.",
     "highlight": "",
     "points": [
-      "Built the complete amplifier chain with right-leg drive (RLD) and a notch filter to pick up the cardiac signal cleanly and suppress interference.",
+      "Built the complete amplifier chain with right-leg drive (RLD) and a notch filter to capture the cardiac signal cleanly and suppress interference.",
       "Debugged circuit performance together with teammates."
     ],
+    "tables": [],
+    "figures": [],
     "tools": []
   }
 ]
