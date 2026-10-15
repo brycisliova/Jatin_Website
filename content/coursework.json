@@ -1,5 +1,5 @@
 {
-  "intro": "The courses below are the ones that shaped my interests most. For official grades, please refer to the transcript, which I am happy to provide.",
+  "intro": "Courses taken at IIT Bombay, grouped by area. Course projects are linked where they are described on this site. Official grades are available on request.",
   "groups": [
     {
       "name": "Circuits and VLSI",
@@ -7,7 +7,7 @@
         { "name": "CMOS Analog VLSI Design", "code": "EE 618", "project": "two-stage-ota" },
         { "name": "Mixed-Signal VLSI Design", "code": "EE 719", "project": "sar-adc" },
         { "name": "VLSI Design", "code": "EE 671", "project": "noise-cancellation" },
-        { "name": "Algorithmic Design of Digital Systems", "code": "EE 789", "project": "arbiter-switch" },
+        { "name": "Algorithmic Design of Digital Systems", "code": "EE 789", "projects": ["matmul-optimisation", "arbiter-switch"] },
         { "name": "Testing and Verification of VLSI Circuits", "code": "EE 709", "note": "Teaching assistant" },
         { "name": "Microprocessors" }
       ]

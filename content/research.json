@@ -2,61 +2,216 @@
   {
     "id": "ddr4-phy-rx",
     "title": "DDR4 PHY Receiver Front-End",
-    "short": "A 1.6 Gbps receiver front-end in TSMC 65 nm CMOS with a source-degenerated CTLE.",
-    "kind": "Dual Degree Project",
+    "short": "Channel modelling and a source-degenerated CTLE for a 1.6 Gbps receiver in TSMC 65 nm CMOS.",
+    "kind": "Dual Degree Project (EE 691)",
     "status": "In progress",
     "period": "Aug 2025 – present",
     "where": "Department of Electrical Engineering, IIT Bombay",
-    "advisors": [{ "name": "Prof. Laxmeesha Somappa", "role": "Guide" }],
+    "advisors": [
+      {
+        "name": "Prof. Laxmeesha Somappa",
+        "role": "Guide"
+      }
+    ],
     "summary": [
-      "At memory and SerDes data rates the channel does a lot of damage before the receiver sees a single bit. This project builds the receiver front-end for a 1.6 Gbps DDR4 PHY in TSMC 65 nm CMOS, starting from a physically realistic model of the FR4 channel and working towards equalization that the channel actually calls for.",
-      "I first characterised how FR4 loss changes with trace length, which shows when a receiver can do without equalization and when it cannot. At 1.6 Gbps the loss over 2.5 cm is below 0.02 dB, so short traces need little help. Beyond that regime the CTLE does the work: I designed a source-degenerated CTLE with deliberate pole-zero placement and 8.87 dB of peaking."
+      "The goal is a receiver front-end for a DDR4-class link at 1.6 Gbps (unit interval 625 ps, Nyquist frequency 800 MHz) in TSMC 65 nm CMOS with a 1.2 V supply. The channel is modelled with a physical multi-conductor transmission line (Cadence mtline, FieldSolver wideband model) instead of ideal RLC sections, and ideal resistors and capacitors are replaced by the process's rnpoly resistors and MIM capacitors.",
+      "The first result concerns the channel itself. Loss at the Nyquist frequency grows with trace length and is very small for realistic DDR4 traces: below 0.02 dB at 2.5 cm, 0.08 dB at 10 cm and 1.2 dB at 90 cm. Significant loss needs either a much higher data rate or a much longer channel, so the amount of equalization a link needs is set jointly by length and data rate.",
+      "To study equalization where it matters, I used an intentionally long 8 m line, which rolls off by 8.09 dB between DC and 800 MHz. A source-degenerated CTLE (differential pair with an R<sub>S</sub>–C<sub>S</sub> degeneration network) designed for 8.87 dB of peaking at 800 MHz flattens this response to within 0.77 dB, raises the eye SNR from 8.39 dB to 18.45 dB and cuts peak-to-peak jitter by 69%. At the 2.5 cm trace the channel is nearly flat, so the CTLE is not needed for loss there; it stays in the chain for signal conditioning, common-mode rejection and isolation of the channel from the comparator."
     ],
-    "results": [
-      { "label": "Eye SNR", "from": "8.39", "to": "18.45", "unit": "dB" },
-      { "label": "Eye height", "from": "253", "to": "831", "unit": "mV" },
-      { "label": "Jitter", "delta": "−69%", "note": "reduction" }
+    "tables": [
+      {
+        "caption": "Roll-off at 800 MHz relative to DC, against trace length (mtline, 1.6 Gbps).",
+        "head": [
+          "Trace length",
+          "Roll-off (dB)"
+        ],
+        "rows": [
+          [
+            "2 cm",
+            "0.010"
+          ],
+          [
+            "5 cm",
+            "0.030"
+          ],
+          [
+            "10 cm",
+            "0.080"
+          ],
+          [
+            "30 cm",
+            "0.4"
+          ],
+          [
+            "90 cm",
+            "1.2"
+          ],
+          [
+            "800 cm",
+            "~8"
+          ]
+        ]
+      },
+      {
+        "caption": "AC response of the 8 m channel, without and with the CTLE.",
+        "head": [
+          "Metric",
+          "Channel only",
+          "Channel + CTLE"
+        ],
+        "rows": [
+          [
+            "Gain at DC",
+            "−7.28 dB",
+            "−5.98 dB"
+          ],
+          [
+            "Gain at 800 MHz",
+            "−15.37 dB",
+            "−5.21 dB"
+          ],
+          [
+            "Roll-off to 800 MHz",
+            "−8.09 dB",
+            "+0.77 dB"
+          ]
+        ]
+      },
+      {
+        "caption": "Eye measurements at 1.6 Gbps over the 8 m channel.",
+        "head": [
+          "Metric",
+          "Without CTLE",
+          "With CTLE"
+        ],
+        "rows": [
+          [
+            "Eye height",
+            "253 mV",
+            "831 mV"
+          ],
+          [
+            "Eye width",
+            "386 ps",
+            "534 ps"
+          ],
+          [
+            "Amplitude",
+            "449 mV",
+            "1077 mV"
+          ],
+          [
+            "SNR",
+            "8.39 dB",
+            "18.45 dB"
+          ],
+          [
+            "Peak-to-peak jitter",
+            "279 ps",
+            "91 ps"
+          ],
+          [
+            "Rise time",
+            "242 ps",
+            "158 ps"
+          ]
+        ]
+      }
     ],
-    "resultsNote": "Before and after the CTLE, on an 8 m channel.",
-    "points": [
-      "FR4 channel loss measured across trace lengths, giving the length–data-rate regime in which receiver equalization becomes necessary.",
-      "Source-degenerated CTLE with pole-zero placement, 8.87 dB peaking.",
-      "Next: CTLE–DFE–CDR integration, full-rate transient and BER validation, then layout-parasitic and PVT-corner analysis."
-    ],
-    "tags": ["High-speed links", "Equalization", "CTLE", "TSMC 65 nm", "Cadence Virtuoso"],
     "diagram": "rx-chain",
-    "figure": null
+    "figures": [
+      {
+        "src": "img/research/ddp-ctle-ac.webp",
+        "alt": "AC response of the 8 m channel without and with the CTLE, plotted from 1 MHz to 10 GHz",
+        "caption": "AC response of the 8 m channel without the CTLE (cyan, −15.37 dB at 800 MHz) and with it (green, −5.21 dB at 800 MHz).",
+        "width": 980,
+        "height": 637
+      },
+      {
+        "src": "img/research/ddp-ctle-eye.webp",
+        "alt": "Eye diagram at 1.6 Gbps showing the channel output and the CTLE output overlaid",
+        "caption": "Eye diagram at 1.6 Gbps over the 8 m channel. Red: channel output. Yellow: CTLE output.",
+        "width": 674,
+        "height": 646
+      }
+    ],
+    "points": [
+      "Add a decision feedback equalizer (DFE) and clock-and-data recovery (CDR), then close the loop.",
+      "Full-rate transient simulation with BER validation (target below 10<sup>−12</sup>).",
+      "Layout-parasitic and PVT-corner analysis."
+    ],
+    "pointsLabel": "Next",
+    "tags": [
+      "High-speed links",
+      "Channel modelling",
+      "CTLE",
+      "TSMC 65 nm",
+      "Cadence Virtuoso"
+    ]
   },
   {
     "id": "mos2-dft",
     "title": "First-Principles Study of Monolayer 2H-MoS₂",
-    "short": "DFT-PBE characterisation of monolayer MoS₂: structure, elasticity, bands, phonons and spin–orbit coupling.",
+    "short": "DFT-PBE study of monolayer MoS₂: structure, elasticity, bands, phonons and spin–orbit coupling.",
     "kind": "Research visit, RPIT’26",
     "status": "Completed",
     "period": "Jun 2026 – Aug 2026",
     "where": "Laboratoire des Solides Irradiés (LSI), École Polytechnique, Institut Polytechnique de Paris",
     "advisors": [
-      { "name": "Dr. Raja Sen", "role": "Main supervisor and co-author" },
-      { "name": "Dr. Nathalie Vast", "role": "Scientific supervisor" }
+      {
+        "name": "Dr. Raja Sen",
+        "role": "Main supervisor and co-author"
+      },
+      {
+        "name": "Dr. Nathalie Vast",
+        "role": "Scientific supervisor"
+      }
     ],
     "summary": [
-      "A systematic first-principles characterisation of monolayer 2H-MoS₂ using density-functional theory (PBE) in Quantum ESPRESSO. The work covers the structural, elastic, electronic, vibrational and spin–orbit properties of the material, so that each computed quantity can be checked against the others and against the literature.",
-      "The elastic constants give a layer incompressibility modulus of about 84 N/m, within roughly 1% of published values, which is the check I used to trust the setup before moving on. The electronic structure shows a direct gap of about 1.68 eV at K, and the phonon dispersion has real frequencies throughout the Brillouin zone, so the structure is dynamically stable at equilibrium. Spin–orbit coupling splits the K-valley valence band by 148 meV, and a maximally-localised Wannier function model reproduces the bands with a few meV of RMS interpolation error."
+      "A first-principles characterisation of monolayer 2H-MoS₂ with density-functional theory (PBE) in Quantum ESPRESSO, covering its structural, elastic, electronic, vibrational and spin–orbit properties. Each computed quantity is checked against the others and against published values.",
+      "The elastic constants give a layer incompressibility modulus of about 84 N/m, within roughly 1% of the literature, which validates the computational setup. The band structure has a direct gap of about 1.68 eV at K, and the phonon dispersion has real frequencies across the whole Brillouin zone, so the structure is dynamically stable at equilibrium. Spin–orbit coupling splits the K-valley valence band by 148 meV, and a maximally-localised Wannier function model reproduces the bands with a few meV of RMS interpolation error."
     ],
-    "results": [
-      { "label": "Layer incompressibility", "value": "~84", "unit": "N/m", "note": "within ~1% of literature" },
-      { "label": "Direct gap at K", "value": "~1.68", "unit": "eV" },
-      { "label": "K-valley SOC splitting", "value": "148", "unit": "meV" }
+    "tables": [
+      {
+        "caption": "Main results.",
+        "head": [
+          "Quantity",
+          "Value"
+        ],
+        "rows": [
+          [
+            "Layer incompressibility modulus",
+            "~84 N/m (within ~1% of literature)"
+          ],
+          [
+            "Band gap",
+            "~1.68 eV, direct, at K"
+          ],
+          [
+            "Phonons",
+            "No imaginary frequencies; dynamically stable"
+          ],
+          [
+            "K-valley valence-band spin–orbit splitting",
+            "148 meV"
+          ],
+          [
+            "Wannier band interpolation",
+            "Few meV RMS error"
+          ]
+        ]
+      }
     ],
-    "resultsNote": "",
-    "points": [
-      "2D elastic constants and the mechanical properties derived from them.",
-      "Band structure and phonon dispersion; no imaginary frequencies, so the structure is dynamically stable.",
-      "Spin–orbit coupling and maximally-localised Wannier functions, with few-meV RMS band interpolation error."
-    ],
-    "tags": ["DFT", "Quantum ESPRESSO", "2D materials", "Phonons", "Wannier functions"],
     "diagram": null,
-    "figure": null
+    "figures": [],
+    "points": [],
+    "tags": [
+      "DFT",
+      "Quantum ESPRESSO",
+      "2D materials",
+      "Phonons",
+      "Wannier functions"
+    ]
   },
   {
     "id": "nus-yfp",
@@ -68,13 +223,16 @@
     "where": "NUS Graduate School and SCALE, National University of Singapore",
     "advisors": [],
     "summary": [
-      "Selected for the 2025 NUS Young Fellowship Programme. The programme combined mentored research tutorials, conversations with faculty and visits to labs across Singapore. I presented a research poster and an oral talk, took part in the 3-Minute Thesis (3MT) challenge, and spent the programme with a cohort from many disciplines who were all weighing research and doctoral paths."
+      "Selected for the 2025 NUS Young Fellowship Programme. The programme included mentored research tutorials, meetings with faculty and visits to laboratories in Singapore. I presented a research poster and an oral talk, took part in the 3-Minute Thesis (3MT) challenge, and met a cohort from many disciplines who were considering research and doctoral study."
     ],
-    "results": [],
-    "resultsNote": "",
-    "points": [],
-    "tags": ["Poster", "Oral presentation", "3MT"],
+    "tables": [],
     "diagram": null,
-    "figure": null
+    "figures": [],
+    "points": [],
+    "tags": [
+      "Poster",
+      "Oral presentation",
+      "3MT"
+    ]
   }
 ]

@@ -48,11 +48,8 @@ cpSync('static', OUT, { recursive: true });
 // Self-hosted fonts (copied from node_modules so the repo stays small).
 mkdirSync(join(OUT, 'fonts'), { recursive: true });
 const fontFiles = [
-  ['@fontsource-variable/newsreader/files/newsreader-latin-opsz-normal.woff2'],
-  ['@fontsource-variable/newsreader/files/newsreader-latin-wght-italic.woff2'],
-  ['@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-400-normal.woff2'],
-  ['@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-500-normal.woff2'],
-  ['@fontsource/ibm-plex-sans/files/ibm-plex-sans-latin-600-normal.woff2']
+  ['@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-normal.woff2'],
+  ['@fontsource-variable/source-sans-3/files/source-sans-3-latin-wght-italic.woff2']
 ];
 for (const [f] of fontFiles) cpSync(join('node_modules', f), join(OUT, 'fonts', f.split('/').pop()));
 
