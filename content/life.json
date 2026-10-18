@@ -6,17 +6,32 @@
       "title": "Reading",
       "body": "I read mostly literature and philosophy, and I like books that stay with me after the last page. A few I keep returning to:",
       "books": [
-        { "title": "Aristotle and Dante Discover the Secrets of the Universe", "author": "Benjamin Alire Sáenz" },
-        { "title": "Aristotle and Dante Dive into the Waters of the World", "author": "Benjamin Alire Sáenz" },
-        { "title": "Gunahon Ka Devta", "author": "Dharamvir Bharati" },
-        { "title": "The Alchemist", "author": "Paulo Coelho" },
-        { "title": "Man’s Search for Meaning", "author": "Viktor E. Frankl" }
+        {
+          "title": "Aristotle and Dante Discover the Secrets of the Universe",
+          "author": "Benjamin Alire Sáenz"
+        },
+        {
+          "title": "Aristotle and Dante Dive into the Waters of the World",
+          "author": "Benjamin Alire Sáenz"
+        },
+        {
+          "title": "Gunahon Ka Devta",
+          "author": "Dharamvir Bharati"
+        },
+        {
+          "title": "The Alchemist",
+          "author": "Paulo Coelho"
+        },
+        {
+          "title": "Man’s Search for Meaning",
+          "author": "Viktor E. Frankl"
+        }
       ]
     },
     {
       "id": "writing",
       "title": "Writing",
-      "body": "I write about people, emotions, relationships and the small turns of everyday life: reflections, letters and thoughts that do not fit anywhere else. At IIT Bombay I also edited for the department's editorial board, where I interviewed alumni about their careers and wrote for the department magazine, newsletters and social media."
+      "body": "I write about people, emotions, relationships and the small turns of everyday life: reflections, letters and thoughts that do not fit anywhere else. Some of it is on my blog, [somewherewithin.github.io](https://somewherewithin.github.io/), and I have also written content for [shiningforever.in](https://shiningforever.in/). Neither is fully up to date. I am still working on both and add to them whenever I find the time. At IIT Bombay I also edited for the department's editorial board, where I interviewed alumni about their careers and wrote for the department magazine, newsletters and social media."
     },
     {
       "id": "cooking",
