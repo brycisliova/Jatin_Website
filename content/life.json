@@ -1,5 +1,5 @@
 {
-  "intro": "Outside the lab I read, cook, practise yoga and occasionally build things that fly. This page is a short, informal account of that.",
+  "intro": "Outside the lab I read, write and cook. This page is a short, informal account of that.",
   "sections": [
     {
       "id": "reading",
@@ -37,16 +37,6 @@
       "id": "cooking",
       "title": "Cooking",
       "body": "I enjoy trying new recipes, ingredients and cuisines. For me cooking is a hands-on way to learn: you change one thing, taste, and find out what happened."
-    },
-    {
-      "id": "movement",
-      "title": "Yoga",
-      "body": "I completed NSO Yoga at IIT Bombay and took on the 54 consecutive Surya Namaskar challenge."
-    },
-    {
-      "id": "making",
-      "title": "Making things",
-      "body": "I earned an Exemplary Design & Innovation Certificate in a two-month RC plane competition. My MS101 project was among the top 24 of more than 700 undergraduate projects and was shown at the IIT Bombay project exhibition."
     }
   ]
 }
